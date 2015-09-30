@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<body>
+
+<h:form>
+		Nome:
+		<h:inputText value="#{usuCtrl.usuario.nome}"/>
+		Login:
+		<h:inputText value="#{usuCtrl.usuario.login}"/> 
+		Senha:
+		<h:inputText value="#{usuCtrl.usuario.senha}"/> 
+		
+		<h:commandButton value="Salvar" actionListener="#{usuCtrl.salvar()}"/>
+
+</h:form>
+
+<h:form>
+
+	<h:dataTable value="#{usuCtrl.usuarioList}" var="usu" border="1" >
+			<f:facet name="header">
+			Lista de Usuarios
+			</f:facet>
+			
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				
+				#{usu.id}
+			</h:column>
+			<h:column>
+			
+			<f:facet name="header">Nome</f:facet>
+				#{usu.nome}
+			</h:column>
+			
+			<h:column>
+			
+			<f:facet name="header">Login</f:facet>
+				#{usu.login}
+			</h:column>
+	
+	</h:dataTable>
+</h:form>
+
+</body>
+</html>
